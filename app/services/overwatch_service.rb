@@ -15,7 +15,7 @@ class OverwatchService
     client.get('ability')
   end
 
-  def get_ability(ability_id:)
+  def get_ability(ability_id)
     client.get("ability/#{ability_id}")
   end
 
