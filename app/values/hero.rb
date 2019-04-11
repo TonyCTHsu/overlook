@@ -32,4 +32,8 @@ class Hero
   def shield
     @data[:shield]
   end
+
+  def abilities
+    @abilities ||= @data[:abilities].map { |data| Ability.new(data) }
+  end
 end

@@ -24,4 +24,8 @@ class Ability
   def is_ultimate
     @data[:is_ultimate]
   end
+
+  def hero
+    @hero ||= Hero.new(@data[:hero])
+  end
 end
