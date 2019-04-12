@@ -7,8 +7,6 @@ class Ability
     new(OverwatchService.new.get_ability(id))
   end
 
-  attr_reader :data
-
   def initialize(data)
     @data = data
   end

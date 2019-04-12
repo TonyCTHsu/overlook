@@ -27,7 +27,7 @@ class OverwatchService
     cache(path) { client.get(path).body }
   end
 
-  def cache(key, expires_in: 1.minutes)
+  def cache(key, expires_in: 1.hour)
     Rails.cache.fetch(key, expires_in: expires_in) do
       yield
     end

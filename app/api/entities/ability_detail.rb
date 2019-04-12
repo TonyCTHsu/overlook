@@ -1,5 +1,5 @@
 module Entities
   class AbilityDetail < Entities::Ability
-    expose :hero, using: Hero
+    expose :hero, using: Entities::Hero
   end
 end
