@@ -1,9 +1,11 @@
 class Hero
-  def self.find(id)
-    new(OverwatchService.new.get_hero(id).body)
+  def self.all
+    OverwatchService.new.get_heros.map { |attributes| new(attributes) }
   end
 
-  attr_reader :data
+  def self.find(id)
+    new(OverwatchService.new.get_hero(id))
+  end
 
   def initialize(data)
     @data = data
@@ -34,6 +36,6 @@ class Hero
   end
 
   def abilities
-    @abilities ||= @data[:abilities].map { |data| Ability.new(data) }
+    @abilities ||= @data[:abilities].map { |attributes| Ability.new(attributes) }
   end
 end

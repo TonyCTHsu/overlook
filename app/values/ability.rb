@@ -1,6 +1,10 @@
 class Ability
+  def self.all
+    OverwatchService.new.get_abilities.map { |attributes| new(attributes) }
+  end
+
   def self.find(id)
-    new(OverwatchService.new.get_ability(id).body)
+    new(OverwatchService.new.get_ability(id))
   end
 
   attr_reader :data

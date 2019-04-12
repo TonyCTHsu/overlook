@@ -4,27 +4,19 @@ class OverwatchService
   end
 
   def get_heros
-    response_body = fetch('hero')
-
-    response_body[:data].map { |data| Hero.new(data) }
+    fetch('hero')[:data]
   end
 
   def get_hero(hero_id)
-    response_body = fetch("hero/#{hero_id}")
-
-    Hero.new(response_body)
+    fetch("hero/#{hero_id}")
   end
 
   def get_abilities
-    response_body = fetch('ability')
-
-    response_body[:data].map { |data| Ability.new(data) }
+    fetch('ability')[:data]
   end
 
   def get_ability(ability_id)
-    response_body = fetch("ability/#{ability_id}")
-
-    Ability.new(response_body)
+    fetch("ability/#{ability_id}")
   end
 
   private
